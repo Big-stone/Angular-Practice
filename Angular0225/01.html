@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="../angular-1.5.8/angular.js"></script>
+    </head>
+    <body>
+    	<div id="container"></div>
+    </body>
+    <script>
+    var datas = [
+    	{ name: 'hanmeimei', age: 19, gender: '女' },
+    	{ name: 'hanmeimei', age: 18, gender: '女' },
+    	{ name: 'hanmeimei', age: 17, gender: '女' },
+    	{ name: 'hanmeimei', age: 16, gender: '女' },
+    	{ name: 'hanmeimei', age: 15, gender: '女' }
+    ];
+
+    var string = '';
+    string = '<table border="1" width="400"><thead>';
+
+    for ( var k in datas[ 0 ] ) {
+
+    	string +='<th>' + k + '</th>';
+    }
+    string += '</thead><tbody>';
+
+    for( var i = 0; i < datas.length; i++ ) {
+    	string += '<tr>';
+
+    	for(var k in datas[ i ]) {
+    		string += '<td>' + datas[ i ][ k ] + '</td>';
+    	}
+    	string += '</tr>';
+    }
+
+    string += '</tbody></table>';
+
+    var dv = document.querySelectorAll("#container")[0];
+
+    dv.innerHTML = string;
+
+    </script>
+</html>

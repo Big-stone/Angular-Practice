@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="../angular-1.5.8/angular.js"></script>
+    </head>
+    <body ng-app="mainApp">
+		
+		<div ng-controller='controller1'>
+    	<input type="text" ng-model='txt'><br/>
+    	<input type="text" ng-model='txt'><br/>
+		</div>
+		<hr>
+		<div ng-controller='controller2'>
+    	<input type="text" ng-model='txt'><br/>
+    	<input type="text" ng-model='txt'><br/>
+		</div>
+    </body>
+    <script>
+    var  module = angular.module( 'mainApp',[] )
+
+    module.controller( 'controller1', function ( $scope ) {
+    	$scope.txt='first controller';
+
+    })
+
+    module.controller( 'controller2', function ( $scope ) {
+    	$scope.txt='second controller';
+    })
+    </script>
+</html>
