@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			div{
+				width: 100px;
+				height: 100px;
+				border: 1px solid #000;
+			}
+        </style>
+        <script src="../angular-1.5.8/angular.js"></script>
+    </head>
+    <body ng-app="mainApp" ng-controller="mainController">
+
+    	<div ng-mouseover="over()" ng-mouseleave="out()"></div>
+
+    </body>
+
+    	<script>
+
+    	angular.module( 'mainApp', [] )
+    		.controller( 'mainController', function ( $scope ) {
+
+    			var div = document.querySelectorAll( 'div' ) [ 0 ];
+
+    			$scope.over = function ( ) {
+    				div.style.backgroundColor = 'red';
+    			};
+
+    			$scope.out = function () {
+    				div.style.backgroundColor = "";
+    			};
+
+    		})
+
+    	</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ng登录验证</title>
+        <script src="../angular-1.5.8/angular.js"></script>
+    </head>
+    <body ng-app="mainApp" ng-controller="mainController">
+	
+		用户名:<input type="text" name="uid" ng-model="name"><br>
+		密码:<input type="password" name="pwd" ng-model="password"><br>
+			 <input type="button" value="登录" ng-click="func()"><br>
+
+			 <div>{{message}}</div>
+    </body>
+	
+    <script>
+    angular.module("mainApp", [])
+    	.controller( 'mainController',function ($scope) {
+    		$scope.func = function ( ) {
+    			var name = $scope.name,
+    				password = $scope.password;
+
+    			if ( (name && name.trim().length > 0) && ( password && password.trim().length > 0) ) {
+    				$scope.message = '登录成功';
+    			} else {
+    				$scope.message = '请重新输入';
+    			}
+    		};
+    	})
+    </script>
+</html>

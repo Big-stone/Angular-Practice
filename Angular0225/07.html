@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+		
+		<script src="../angular-1.5.8/angular.js"></script>
+    </head>
+    <body ng-app="mainApp" ng-controller="mainController">
+    	昵称:<input type="username" name="uid" ng-model="uid">
+    	密码:<input type="password" name="psw" ng-model="psw">
+    	<input type="submit"  value="提交" ng-click="func()">
+		<div>{{message}}</div>
+    	<script>
+    	angular.module("mainApp",[])
+    		.controller("mainController",function ($scope) { 
+
+    			$scope.func = function () { 
+
+    				var name = $scope.uid,
+    					password = $scope.psw;
+
+    				if ((name&&name.trim().length > 0) && (password&&password.trim().length > 0)) {
+    					$scope.message = '登录成功';
+    				} else {
+    					$scope.message = "请重新输入";
+    				}
+    			}
+
+    		 })
+
+    	</script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="../angular-1.5.8/angular.js"></script>
+    </head>
+    <body ng-app="mainApp">
+
+		<div ng-controller="controllerA">
+			<input type="text" ng-model="txt">
+			<input type="text" ng-model="txt">
+		</div>
+
+		<div ng-controller="controllerB">
+			<input type="text" ng-model="txt">
+			<input type="text" ng-model="txt">
+		</div>
+	
+	<script>
+
+		angular.module("app1",[])
+			.controller("controllerA", function () {});
+		angular.module("app2", [] )
+			.controller("controllerB", function () {});
+
+		angular.module("mainApp",["app1","app2"]);
+
+
+	</script>
+
+    </body>
+</html>
