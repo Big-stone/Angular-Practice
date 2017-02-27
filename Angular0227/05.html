@@ -10,29 +10,42 @@
 			}
         </style>
         <script src="../angular-1.5.8/angular.js"></script>
+        <!-- <script src="../jquery-3.1.0.js"></script> -->
     </head>
     <body ng-app="mainApp" ng-controller="mainController">
 
-    	<div ng-mouseover="over()" ng-mouseleave="out()"></div>
+    	<div ng-mouseover="over()" ng-mouseleave="out()" ng-style="bk"></div>
 
     </body>
 
     	<script>
 
-    	angular.module( 'mainApp', [] )
-    		.controller( 'mainController', function ( $scope ) {
+            angular.module( "mainApp", [] )
+                .controller( "mainController" , function ($scope ) {
 
-    			var div = document.querySelectorAll( 'div' ) [ 0 ];
+                    $scope.bk = {};
 
-    			$scope.over = function ( ) {
-    				div.style.backgroundColor = 'red';
-    			};
+                    var div = document.querySelectorAll( "div" )[ 0 ];  
 
-    			$scope.out = function () {
-    				div.style.backgroundColor = "";
-    			};
+                    $scope.over = function () {
+                        // 方案1
+                        // div.style.backgroundColor = "red";
+                        // 方案2
+                        // $( "div" ).css("backgroundColor","red");
+                        // 方案3
+                        $scope.bk.backgroundColor = "red";
 
-    		})
+                    };
+
+                    $scope.out = function () {
+
+                        // div.style.background = "";
+                        // $( "div" ).css("backgroundColor","");
+                        $scope.bk.backgroundColor = "";
+                    }
+
+                })
+
 
     	</script>
 </html>

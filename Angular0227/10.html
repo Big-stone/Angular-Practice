@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>date过滤器</title>
+        <script src="../angular-1.5.8/angular.js"></script>
+    </head>
+    <body ng-app="main" ng-controller="mainController">
+    	<div>{{date}}</div>
+    	<div>{{date | date: 'yyyy年MM月dd日 hh时mm分ss秒' }}</div>
+        <div>{{newDate}}</div>
+
+    	<script>
+
+    		angular.module( "main", [] )
+    			.controller( "mainController", function ( $scope, $filter ) {
+
+    				$scope.date = new Date();
+
+                    $scope.newDate = $filter( 'date' )( $scope.date, "yyyy:MM:dd hh:mm:ss" )
+    			})
+
+    	</script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>使用ng-repeat生成列表</title>
+        <script src="../angular-1.5.8/angular.js"></script>
+    </head>
+    <body ng-app="mainApp" ng-controller="mainController">
+    	<ul>
+    		<li ng-repeat="item in list"><a href="#">{{item}}</a></li>
+    	</ul>
+    </body>
+    <script>
+    angular.module( "mainApp", [] )
+    	.controller( "mainController", function ( $scope ) {
+
+    		var menu = '首页,首页1,首页2,首页3,首页4,首页5,首页6,首页7'.split( ',' );
+
+    		$scope.list = menu;
+
+    	})
+
+    </script>
+</html>

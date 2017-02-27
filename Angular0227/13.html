@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>filter使用字符串过滤案例</title>
+        <script src="../angular-1.5.8/angular.js"></script>
+    </head>
+    <body ng-app="mainApp" ng-controller="mainController">
+		<input type="text" ng-model="search">
+		<div ng-repeat="item in list | filter:search">{{item}}</div>
+    </body>
+    <script>
+    angular.module( "mainApp",[] )
+    	.controller("mainController", function ( $scope ) {
+    		var datas = "zxcA,Bewe,Cuy,ytD,trE,werF,Jfsdf,Hdfg,jgI,Jgfh,Kdg,Ldg,Msdaf,Ndsa,Oasd,Pasdasd".split( "," );
+    		$scope.list = datas;
+    	})
+    </script>
+</html>
