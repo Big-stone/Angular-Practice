@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+<<<<<<< HEAD
         <script src="../angular-1.5.8/angular.js"></script>
     </head>
     <body ng-app="mainApp" ng-controller="mainController">
@@ -27,5 +28,44 @@
     				})
 
     	</script>
+=======
+        <title>继承关系</title>
+        <script src="../angular-1.5.8/angular.js"></script>
+    </head>
+    <body ng-app="main">
+    	rootscope:<input type="text" ng-model="txt">
+
+    	<div ng-controller="controller1">
+
+    	controller1:<input type="text" ng-model="txt">
+	
+    		<div ng-controller="controller2">
+
+    			controller2:<input type="text" ng-model="txt">
+
+    		</div>
+
+    	</div>
+
+    	<div ng-controller="controller3">
+
+    		controller3:<input type="text" ng-model="txt">
+
+    	</div>
+		
+		<script>
+		angular.module( "main", [] )
+			.controller( 'controller1', function ($scope) {
+					window.scope = $scope;
+			})
+			.controller( 'controller2', function ($scope) {
+				
+			})
+			.controller( 'controller3', function ($scope) {
+				
+			})
+
+		</script>
+>>>>>>> 1df011fa15616e6c5f003da4a227b95c5e4f45ab
     </body>
 </html>

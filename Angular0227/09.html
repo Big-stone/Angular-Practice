@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>过滤器-货币案例</title>
+        <script src="../angular-1.5.8/angular.js"></script>
+    </head>
+    <body ng-app="main" ng-controller="mainController">
+    	<div>{{ price }}</div>
+
+    	<script>
+    		angular.module( "main", [] )
+    			.controller( "mainController", function ( $scope, $filter ) {
+
+    				$scope.price=$filter("currency")(123456);
+    				
+
+    			})
+    	</script>
+    </body>
+</html>
