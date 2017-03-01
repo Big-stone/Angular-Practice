@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="../angular-1.5.8/angular.js"></script>
+    </head>
+    <body ng-app="main">
+    <img ng-src="{{imgSrc}}" alt="">
+
+    <script>
+    angular.module( 'main', [] )
+    	.run( function ( $rootScope ) {
+
+    		$rootScope.imgSrc = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1488396118835&di=60f00a6ba4385328664b1e90c63349d3&imgtype=0&src=http%3A%2F%2Fcdn103.img.lizhi.fm%2Faudio_cover%2F2016%2F12%2F09%2F2572731508400000007_320x320.jpg'
+    	})
+    //如直接使用img的src属性会多发生一次请求，所以需修改为ng-src则减少一次请求
+
+    </script>
+    </body>
+</html>
