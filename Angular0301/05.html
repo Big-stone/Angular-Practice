@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="../angular-1.5.8/angular.js"></script>
+        <style>
+			div{
+				
+			  width: 100px;
+			  height: 100px;
+			  border: 1px solid #000;
+
+			}
+        </style>
+    </head>
+    <body ng-app>
+
+    	<button ng-click="show=!show">点击</button>
+
+    	<div ng-show="show">1是否显示</div>
+    	<div ng-hide="show">2是否隐藏</div>
+    	<div ng-if="show">3是否存在</div>
+    </body>
+</html>
+                                                                                                                                                                                          
