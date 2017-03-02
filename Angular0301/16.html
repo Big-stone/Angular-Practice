@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="../angular-1.5.8/angular.js"></script>
+        <title></title>
+    </head> 
+    <body ng-app="mainApp">
+    	<div ng-controller="mainController">
+            <my-directive>hello</my-directive>
+            <my-directive>
+					<span style="color:red;">world</span>
+            </my-directive>
+
+    	</div>
+    </body>
+    <script>
+    angular.module( "mainApp",[] )
+    	.directive( "myDirective", function () {
+
+    		return {
+    			restrict: "E",
+    			template:"<div><p ng-transclude></p></div>",
+    			// scope:true //继承
+                scope:{}, //独立作用域不继承
+                replace:true, //是否替换容器标签
+                transclude:true
+               
+    		}
+    	})
+    	.controller( 'mainController', function ( $scope ) {
+    		$scope.txt="李雷";
+    	})
+    </script>
+</html>

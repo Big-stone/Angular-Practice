@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="../angular-1.5.8/angular.js"></script>
+    </head>
+    <body ng-app="mainApp">
+    	<div ng-controller="mainController">
+
+    		<button ng-disabled="allowClick" >{{msg}}</button>
+    		
+    	</div>
+    </body>
+    <script>
+
+    	angular.module( "mainApp", [] )
+    		.controller( "mainController", function ( $scope, $interval ) {
+    			$scope.msg = "请等待5秒钟";
+    			$scope.allowClick = true;
+
+    			var i = 0;
+
+    			var timer = $interval( function () {
+
+    				i++;
+
+    				if ( i == 5 ) {
+
+    				$scope.msg = "可以点击";
+
+    				$scope.allowClick = false;
+
+    				$interval.cancel( timer );
+
+    				}
+
+    			},1000)
+
+    		})
+
+    </script>
+</html>
