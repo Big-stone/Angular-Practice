@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="../angular-1.5.8/angular.js"></script>
+    </head>
+    <body ng-app="mainApp">
+    	<div ng-controller="mainController">
+
+    		<div my-repeat="list"></div>
+
+    	</div>
+    </body>
+
+    <script>
+    angular.module( 'mainApp', [] )
+    		//自定义指令
+    	.directive( 'myRepeat', function () {
+    			//elems中存储的元素 attrs属性
+                
+    		return function ( scope, elems, attrs ) {
+
+    			var attr = attrs.myRepeat;
+    			console.log(attr)
+    			var datas = scope[attr];
+    			console.log(datas)
+    			console.log(elems)
+
+    			elems.append(datas.map( function ( v ) {
+    				return '<div>' + v + '</div>';
+    			}).join( '' ))
+
+    		}
+    	})
+    	.controller( "mainController", function ( $scope ) {
+
+    		$scope.list = [ 1, 2, 3, 4, 5, 6, 7, 8];
+
+    	})
+
+    </script>
+</html>
