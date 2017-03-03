@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="../angular-1.5.8/angular.js"></script>
+        <style>
+        .c {
+            width: 50px;
+            height: 40px;
+            border: 1px dashed red;
+            float: left;
+        }
+    </style>
+    </head>
+    <body ng-app="mainApp">
+	
+		<div ng-controller="mainController">
+			
+		</div>
+
+    </body>
+    <script>
+
+    angular.module( 'mainApp', [] )
+    	.factory( 'custom', function () {
+
+    		return {
+    			name:'jim',
+    			age:19,
+    			gender:'男'
+    		}
+    	})
+    	.controller( 'mainController', function ( $scope, custom ) {
+    		console.log(custom);
+    	});
+
+    </script>
+</html>
